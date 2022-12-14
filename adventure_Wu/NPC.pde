@@ -1,29 +1,19 @@
 public class NPC {
-  int scale;
-  int col;
-  int row;
   PImage image;
+  float s, x, y;
 
-  NPC (int s, int c, int r, PImage img) {
-    scale = s;
+  NPC (int scale, int col, int row, PImage img) {
+    s = scale * 0.7;
     image = img;
-    col = c;
-    row = r;
+    x = col*scale + scale/2;
+    y = row*scale + scale/2;
   }
 
   void display() {
-    image (image, col*scale + scale/2, row*scale + scale/2, scale*0.7, scale*0.7);
+    image (image, x, y, s, s);
   }
 
-  //int getScale() {
-  //  return scale;
-  //}
-
-  //int getCol() {
-  //  return col;
-  //}
-
-  //int getRow() {
-  //  return row;
-  //}
+  String toString() {
+    return "" + image.toString();
+  }
 }
